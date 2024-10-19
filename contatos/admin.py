@@ -1,7 +1,19 @@
 from django.contrib import admin
 from .models import Categoria, Contato
+from contatos import models
+
 
 # Register your models here.
 admin.site.register(Categoria)
 
-admin.site.register(Contato)
+
+@admin.register(models.Contato)
+class ContatoAdmin(admin.ModelAdmin):
+    list_display = 'id', 'nome', 'sobrenome', 'telefone',
+    ordering = 'id', 'nome', 'sobrenome'
+    # list_filter = 'nome', 'data_criacao'
+    search_fields = 'nome', 'sobrenome', 'telefone'
+    list_per_page = 20
+    list_max_show_all = 100
+    list_editable = 'nome', 'sobrenome',
+    list_display_links = 'id',
