@@ -4,7 +4,11 @@ from contatos import models
 
 
 # Register your models here.
-admin.site.register(Categoria)
+# admin.site.register(Categoria)
+@admin.register(models.Categoria)
+class CategoriaAdmin(admin.ModelAdmin):
+    list_display = 'nome',
+    ordering = 'id',
 
 
 @admin.register(models.Contato)
