@@ -13,11 +13,11 @@ class CategoriaAdmin(admin.ModelAdmin):
 
 @admin.register(models.Contato)
 class ContatoAdmin(admin.ModelAdmin):
-    list_display = 'id', 'nome', 'sobrenome', 'telefone',
+    list_display = 'id', 'nome', 'sobrenome', 'telefone', 'show',
     ordering = 'id', 'nome', 'sobrenome'
     # list_filter = 'nome', 'data_criacao'
     search_fields = 'nome', 'sobrenome', 'telefone'
     list_per_page = 20
     list_max_show_all = 100
-    list_editable = 'nome', 'sobrenome',
+    list_editable = 'nome', 'sobrenome', 'show', 'telefone'
     list_display_links = 'id',

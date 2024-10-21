@@ -1,4 +1,10 @@
 {
+  "files.associations": {
+    "**/*.html": "html",
+    "**/templates/**/*.html": "django-html",
+    "**/templates/**/*": "django-txt",
+    "**/requirements{/**,*}.{txt,in}": "pip-requirements"
+},
     "window.zoomLevel": 0,
     "editor.fontSize": 14,
     "editor.hover.enabled": true,
@@ -50,5 +56,8 @@
     "python.defaultInterpreterPath": "./venv/bin/python",
     "python.analysis.typeCheckingMode": "basic",
     "cSpell.enabled": true,
-    "python.formatting.provider": "none"
+    "python.formatting.provider": "none",
+    "cSpell.words": [
+      "contatos"
+    ]
   }
