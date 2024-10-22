@@ -1,6 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from contatos.models import Contato
-
+from django.http import Http404
 # Create your views here.
 
 
@@ -17,7 +17,9 @@ def index(request):
 
 
 def contatos(request, contato_id):
-    single_contact = Contato.objects.get(pk=contato_id)
+    # single_contact = Contato.objects.filter(pk=contato_id).first()
+    single_contact = get_object_or_404(
+        Contato.objects, pk=contato_id, show=True)  # type: ignore
 
     context = {'contato': single_contact}
 
