@@ -7,7 +7,9 @@ from django.http import Http404
 def index(request):
     contatos = Contato.objects.filter(show=True).order_by('-id')[0:10]
 
-    context = {'contatos': contatos}
+    context = {'contatos': contatos,
+               'site_title': 'Contato - ',
+               }
 
     return render(
         request,
@@ -21,7 +23,14 @@ def contatos(request, contato_id):
     single_contact = get_object_or_404(
         Contato.objects, pk=contato_id, show=True)  # type: ignore
 
-    context = {'contato': single_contact}
+    nome_contato = f'{single_contact.nome} {single_contact.sobrenome} '
+
+    context = {
+        'contato': single_contact,
+        'site_title': nome_contato,
+
+
+    }
 
     return render(
         request,
