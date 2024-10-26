@@ -1,3 +1,5 @@
+
+# type: ignore
 from django.urls import path
 
 from contatos import views
@@ -5,7 +7,13 @@ from contatos import views
 app_name = 'contatos'
 
 urlpatterns = [
-    path('<int:contato_id>/', views.contatos, name='contatos'),  # type: ignore
-    path('search/', views.search, name='search'),  # type: ignore
+    path('search/', views.search, name='search'),
     path('', views.index, name='index'),
+
+    # contato  (CRUD)
+    path('contato/<int:contato_id>/detalhe/', views.contatos, name='contatos'),
+    path('contato/create/', views.create, name='create'),
+
+
+
 ]
