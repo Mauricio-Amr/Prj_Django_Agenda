@@ -1,3 +1,4 @@
+# type : ignore
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
@@ -11,8 +12,8 @@ class Categoria(models.Model):
 
     nome = models.CharField(max_length=255)
 
-    def __str__(self):
-        return self.nome
+    def __str__(self) -> str:
+        return f'{self.nome}'
 
 
 class Contato(models.Model):

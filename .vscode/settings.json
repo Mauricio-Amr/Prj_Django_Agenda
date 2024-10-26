@@ -59,5 +59,8 @@
     "python.formatting.provider": "none",
     "cSpell.words": [
       "contatos"
-    ]
+    ],
+    "emmet.includeLanguages": {
+     "django-html": "html",
+}
   }
